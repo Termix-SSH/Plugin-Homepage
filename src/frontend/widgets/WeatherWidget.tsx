@@ -38,7 +38,7 @@ interface WttrResponse {
 
 function weatherIcon(code: string, size = 20) {
   const n = Number(code);
-  if (n === 113) return <Sun size={size} className="text-yellow-400" />;
+  if (n === 113) return <Sun size={size} className="text-warning" />;
   if (n <= 119) return <Cloud size={size} className="text-gray-400" />;
   if (n <= 143) return <Cloud size={size} className="text-gray-400" />;
   if (n <= 266) return <CloudRain size={size} className="text-blue-400" />;

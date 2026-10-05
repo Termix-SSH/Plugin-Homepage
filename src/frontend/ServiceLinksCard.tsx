@@ -5,12 +5,13 @@ import {
   useTranslation,
   type DashboardCardProps,
 } from "@termix/plugin-sdk/frontend";
-import { Button, Card } from "@termix/plugin-sdk/ui";
+import { Button, Card, useConfirm } from "@termix/plugin-sdk/ui";
 import type { ServiceLinkRecord } from "./types.js";
 import { isValidServiceLinkUrl, normalizeServiceLinkUrl } from "./url.js";
 
 export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
   const { t } = useTranslation();
+  const confirm = useConfirm();
   const api = usePluginApi();
   const [links, setLinks] = useState<ServiceLinkRecord[]>([]);
   const [label, setLabel] = useState("");
@@ -56,7 +57,12 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: number, name: string) => {
+    const ok = await confirm({
+      title: t("dashboardTab.serviceLinksDeleteConfirm", { name }),
+      confirmLabel: t("common.delete"),
+    });
+    if (!ok) return;
     await api.delete(`/service-links/${id}`);
     setLinks((prev) => prev.filter((l) => l.id !== id));
   };
@@ -95,7 +101,7 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
               </span>
             </a>
             <button
-              onClick={() => handleDelete(link.id)}
+              onClick={() => void handleDelete(link.id, link.label)}
               className="ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity size-5 flex items-center justify-center hover:text-destructive"
             >
               <Trash2 className="size-3" />

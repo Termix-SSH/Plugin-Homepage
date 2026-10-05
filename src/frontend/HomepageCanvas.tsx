@@ -1,3 +1,4 @@
+import { useConfirm } from "@termix/plugin-sdk/ui";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "@termix/plugin-sdk/frontend";
 import { LayoutGrid } from "lucide-react";
@@ -75,6 +76,7 @@ export function HomepageCanvas({
   onOpenFullscreen,
 }: HomepageCanvasProps) {
   const { t } = useTranslation();
+  const confirm = useConfirm();
   const containerRef = useRef<HTMLDivElement>(null);
   const [widgets, setWidgets] = useState<CanvasWidget[]>([]);
   const [pan, setPan] = useState(DEFAULT_PAN);
@@ -208,7 +210,7 @@ export function HomepageCanvas({
       setPan(newPan);
       scheduleSave(undefined, newPan, undefined);
     },
-    [scheduleSave],
+    [scheduleSave, confirm, t],
   );
 
   const handleZoomChange = useCallback(
@@ -371,6 +373,11 @@ export function HomepageCanvas({
 
   const handleDelete = useCallback(
     async (id: number) => {
+      const ok = await confirm({
+        title: t("homepage.deleteWidgetConfirm"),
+        confirmLabel: t("common.delete"),
+      });
+      if (!ok) return;
       try {
         await deleteHomepageItem(id);
         setWidgets((prev) => {

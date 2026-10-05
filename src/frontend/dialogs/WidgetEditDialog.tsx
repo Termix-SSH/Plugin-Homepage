@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { getWidgetType } from "../widgets/WidgetRegistry";
 import { useTranslation } from "@termix/plugin-sdk/frontend";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-  Input,
-} from "@termix/plugin-sdk/ui";
+import { Button, Input, InlineView } from "@termix/plugin-sdk/ui";
 
 import type {
   CanvasWidget,
@@ -312,42 +304,37 @@ export function WidgetEditDialog({
   };
 
   return (
-    <Dialog
+    <InlineView
       open={!!widget}
       onOpenChange={(open) => {
         if (!open) onClose();
       }}
-    >
-      <DialogContent
-        className="max-w-sm"
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        <DialogHeader>
-          <DialogTitle>{t("homepage.editWidget")}</DialogTitle>
-        </DialogHeader>
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-1">
-            <label className="text-xs font-medium text-muted-foreground">
-              {t("homepage.title_label")}
-            </label>
-            <Input
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder={t("homepage.widgetTitlePlaceholder")}
-              className="h-8 text-sm"
-            />
-          </div>
-          {renderForm()}
-        </div>
-        <DialogFooter>
+      title={t("homepage.editWidget")}
+      footer={
+        <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
           <Button variant="outline" size="sm" onClick={onClose}>
             {t("homepage.cancel")}
           </Button>
           <Button size="sm" onClick={handleSave} disabled={configInvalid}>
             {t("homepage.save")}
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </div>
+      }
+    >
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs font-medium text-muted-foreground">
+            {t("homepage.title_label")}
+          </label>
+          <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder={t("homepage.widgetTitlePlaceholder")}
+            className="h-8 text-sm"
+          />
+        </div>
+        {renderForm()}
+      </div>
+    </InlineView>
   );
 }

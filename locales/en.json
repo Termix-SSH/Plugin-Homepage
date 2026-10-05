@@ -13,7 +13,8 @@
     "serviceLinksLabelPlaceholder": "My Service",
     "serviceLinksUrlPlaceholder": "http://192.168.1.10:8080",
     "serviceLinksInvalidUrl": "Enter a valid web address",
-    "serviceLinksAddFailed": "Failed to add service link"
+    "serviceLinksAddFailed": "Failed to add service link",
+    "serviceLinksDeleteConfirm": "Delete the link {{name}}?"
   },
   "homepage": {
     "title": "Homepage",
@@ -301,7 +302,8 @@
         "name": "Metrics Chart",
         "description": "Historical CPU, memory, disk, or network chart for a host"
       }
-    }
+    },
+    "deleteWidgetConfirm": "Delete this widget?"
   },
   "permissions": {
     "use": {

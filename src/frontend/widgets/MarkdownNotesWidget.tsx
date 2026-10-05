@@ -4,7 +4,7 @@ import { registerWidget } from "./WidgetRegistry";
 import type { MarkdownNotesConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
 import { updateHomepageItem } from "../api.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function renderMarkdown(src: string): string {
   return src

@@ -7,7 +7,7 @@ import {
   text,
   timestamp,
   varchar,
-} from "@termix/plugin-sdk/db";
+} from "@termix-ssh/plugin-sdk/db";
 
 /** One homepage widget tile. folderId points at another row when it sits in a folder. */
 export const homepageItems = adoptLegacyTable(

@@ -2,8 +2,8 @@ import {
   useTranslation,
   useHosts,
   type PluginHostRecord,
-} from "@termix/plugin-sdk/frontend";
-import { Select2 } from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Select2 } from "@termix-ssh/plugin-sdk/ui";
 
 interface SingleHostEditFormProps {
   hostId: number;

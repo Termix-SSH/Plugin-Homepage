@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { TermixUptimeConfig, WidgetEditFormProps } from "../types.js";
 
 export function TermixUptimeEditForm({

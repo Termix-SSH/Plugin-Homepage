@@ -5,7 +5,7 @@ import {
   useHostStatus,
   useHosts,
   useTabs,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 
 import { registerWidget } from "./WidgetRegistry";
 import type {
@@ -16,7 +16,7 @@ import type {
 import { GRID_SIZE } from "../types.js";
 
 import { quickConnectTargets } from "../quick-connect-targets.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function StatusDot({ hostId }: { hostId: number }) {
   const status = useHostStatus(hostId);

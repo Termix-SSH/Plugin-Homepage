@@ -4,12 +4,12 @@ import {
   useHostStatus,
   useHosts,
   type PluginHostRecord,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 
 import { registerWidget } from "./WidgetRegistry";
 import type { HostGridConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function getAccentColor(): string {
   return (

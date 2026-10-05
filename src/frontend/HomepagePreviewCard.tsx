@@ -2,8 +2,8 @@ import { LayoutGrid } from "lucide-react";
 import {
   useTranslation,
   type DashboardCardProps,
-} from "@termix/plugin-sdk/frontend";
-import { Card } from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Card } from "@termix-ssh/plugin-sdk/ui";
 import { HomepageCanvas } from "./HomepageCanvas.js";
 
 export function HomepagePreviewCard({ shell }: DashboardCardProps) {

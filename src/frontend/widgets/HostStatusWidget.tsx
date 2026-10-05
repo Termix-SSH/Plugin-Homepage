@@ -3,9 +3,9 @@ import {
   useTranslation,
   useHost,
   useHostStatus,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 
-import { ComponentSlot, WidgetTitle } from "@termix/plugin-sdk/ui";
+import { ComponentSlot, WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 import { registerWidget } from "./WidgetRegistry";
 import type {
   HostStatusConfig,

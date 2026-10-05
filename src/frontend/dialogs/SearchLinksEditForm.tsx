@@ -1,6 +1,6 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Trash2, Plus } from "lucide-react";
-import { Input, Button } from "@termix/plugin-sdk/ui";
+import { Input, Button } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   SearchLinksConfig,

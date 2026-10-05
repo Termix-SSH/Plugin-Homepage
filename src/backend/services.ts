@@ -1,4 +1,4 @@
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import type { HomepageRepository } from "./repository.js";
 
 /** The "homepage.items" service, version 1. Runs as the caller's user. */

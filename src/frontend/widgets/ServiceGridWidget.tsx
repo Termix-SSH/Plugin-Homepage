@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { useRef, useState, useEffect } from "react";
 import { Grid3x3, ExternalLink } from "lucide-react";
 import { registerWidget } from "./WidgetRegistry";
@@ -8,7 +8,7 @@ import type {
   WidgetComponentProps,
 } from "../types.js";
 import { GRID_SIZE } from "../types.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function getAccentColor(): string {
   return (

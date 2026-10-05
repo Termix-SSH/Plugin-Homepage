@@ -2,7 +2,7 @@ import {
   getExtension,
   useExtensions,
   type ExtensionContribution,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import { useMemo } from "react";
 import type { WidgetTypeDefinition, WidgetTypeId } from "../types.js";
 

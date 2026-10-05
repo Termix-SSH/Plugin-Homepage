@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Clock4 } from "lucide-react";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { registerWidget } from "./WidgetRegistry";
 import type { TermixUptimeConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
@@ -8,7 +8,7 @@ import {
   WidgetTitle,
   getUptime,
   runVisibleInterval,
-} from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/ui";
 
 function formatUptime(seconds: number): {
   days: number;

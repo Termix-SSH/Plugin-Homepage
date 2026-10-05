@@ -1,5 +1,5 @@
 import http from "node:http";
-import type { PluginFetchInit } from "@termix/plugin-sdk/backend";
+import type { PluginFetchInit } from "@termix-ssh/plugin-sdk/backend";
 import type { AddressInfo } from "node:net";
 import { fileURLToPath } from "node:url";
 import express, { type Router } from "express";
@@ -8,8 +8,8 @@ import {
   createTestDb,
   type MockPluginContext,
   type TestDb,
-} from "@termix/plugin-sdk/testing";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
+} from "@termix-ssh/plugin-sdk/testing";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 
 export const pluginDir = fileURLToPath(new URL("../..", import.meta.url));

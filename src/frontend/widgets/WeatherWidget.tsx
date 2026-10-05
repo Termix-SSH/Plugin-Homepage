@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { useEffect, useState } from "react";
 import {
   Cloud,
@@ -12,7 +12,7 @@ import { registerWidget } from "./WidgetRegistry";
 import type { WeatherConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
 
-import { WidgetTitle, runVisibleInterval } from "@termix/plugin-sdk/ui";
+import { WidgetTitle, runVisibleInterval } from "@termix-ssh/plugin-sdk/ui";
 
 interface WttrCurrent {
   temp_C: string;

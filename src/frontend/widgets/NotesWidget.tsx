@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { StickyNote } from "lucide-react";
 import { registerWidget } from "./WidgetRegistry";
 import {
@@ -6,7 +6,7 @@ import {
   type NotesConfig,
   type WidgetComponentProps,
 } from "../types.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function NotesWidget({ widget, config }: WidgetComponentProps<NotesConfig>) {
   const { t } = useTranslation();

@@ -1,10 +1,10 @@
-import { useHosts, useTranslation } from "@termix/plugin-sdk/frontend";
+import { useHosts, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type {
   HostMetricKey,
   HostStatusConfig,
   WidgetEditFormProps,
 } from "../types.js";
-import { Select2 } from "@termix/plugin-sdk/ui";
+import { Select2 } from "@termix-ssh/plugin-sdk/ui";
 
 const METRIC_OPTIONS: { key: HostMetricKey; labelKey: string }[] = [
   { key: "cpu", labelKey: "homepage.metricCpu" },

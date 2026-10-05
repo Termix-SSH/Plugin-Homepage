@@ -1,5 +1,5 @@
-import { useActivityTypes, useTranslation } from "@termix/plugin-sdk/frontend";
-import { Input } from "@termix/plugin-sdk/ui";
+import { useActivityTypes, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
+import { Input } from "@termix-ssh/plugin-sdk/ui";
 import type {
   RecentActivityConfig,
   ActivityType,

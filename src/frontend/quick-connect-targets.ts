@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 import type {
   HostActionContribution,
   PluginHostRecord,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 
 export interface QuickConnectTarget {
   /** Tab type, and the value stored in a widget's config. */

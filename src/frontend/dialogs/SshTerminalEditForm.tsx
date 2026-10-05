@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { SshTerminalConfig, WidgetEditFormProps } from "../types.js";
 import { SingleHostEditForm } from "./SingleHostEditForm";
 

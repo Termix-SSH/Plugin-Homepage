@@ -2,7 +2,7 @@ import {
   useHostActions,
   useHosts,
   useTranslation,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import type {
   QuickConnectConfig,
   QuickConnectType,

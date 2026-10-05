@@ -1,5 +1,5 @@
 import type { Request, Response, Router } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 
 const FETCH_TIMEOUT_MS = 8000;
 const MAX_FAVICON_BYTES = 512 * 1024;

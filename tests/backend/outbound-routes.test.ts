@@ -1,4 +1,4 @@
-import type { PluginFetch } from "@termix/plugin-sdk/backend";
+import type { PluginFetch } from "@termix-ssh/plugin-sdk/backend";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { startServer, type TestServer } from "./helpers";
 

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Activity } from "lucide-react";
-import { useTranslation, activityTarget } from "@termix/plugin-sdk/frontend";
+import { useTranslation, activityTarget } from "@termix-ssh/plugin-sdk/frontend";
 
 import {
   WidgetTitle,
   getRecentActivity,
   runVisibleInterval,
   type RecentActivityItem,
-} from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/ui";
 import { registerWidget } from "./WidgetRegistry";
 import type {
   RecentActivityConfig,

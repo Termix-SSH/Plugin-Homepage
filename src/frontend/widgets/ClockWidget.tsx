@@ -9,7 +9,7 @@ import {
 
 import { usePageVisibleInterval } from "../use-page-visible-interval.js";
 import { isValidTimezone } from "../clock-timezone";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 function ClockWidget({ widget, config }: WidgetComponentProps<ClockConfig>) {
   const { showSeconds, format } = config;

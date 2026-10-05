@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Wifi } from "lucide-react";
-import { usePluginApi, useTranslation } from "@termix/plugin-sdk/frontend";
+import { usePluginApi, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { registerWidget } from "./WidgetRegistry";
 import type { PingStatusConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
-import { WidgetTitle, runVisibleInterval } from "@termix/plugin-sdk/ui";
+import { WidgetTitle, runVisibleInterval } from "@termix-ssh/plugin-sdk/ui";
 
 interface PingResult {
   ok: boolean;

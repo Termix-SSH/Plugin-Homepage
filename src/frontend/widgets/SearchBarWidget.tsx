@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Search } from "lucide-react";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { registerWidget } from "./WidgetRegistry";
 import type {
   SearchBarConfig,
@@ -8,7 +8,7 @@ import type {
   WidgetComponentProps,
 } from "../types.js";
 import { GRID_SIZE } from "../types.js";
-import { WidgetTitle } from "@termix/plugin-sdk/ui";
+import { WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 
 const ENGINE_URLS: Record<SearchEngine, string> = {
   google: "https://www.google.com/search?q={q}",

@@ -1,4 +1,4 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Type } from "lucide-react";
 import { registerWidget } from "./WidgetRegistry";
 import type { TextBannerConfig, WidgetComponentProps } from "../types.js";

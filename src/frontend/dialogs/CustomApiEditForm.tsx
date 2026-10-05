@@ -1,5 +1,5 @@
-import { useTranslation } from "@termix/plugin-sdk/frontend";
-import { Input } from "@termix/plugin-sdk/ui";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
+import { Input } from "@termix-ssh/plugin-sdk/ui";
 import type {
   CustomApiConfig,
   CustomApiDisplayMode,

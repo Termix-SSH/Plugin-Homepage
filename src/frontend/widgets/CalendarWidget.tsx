@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { registerWidget } from "./WidgetRegistry";
 import type { CalendarConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";
 
-import { WidgetTitle, runVisibleInterval } from "@termix/plugin-sdk/ui";
+import { WidgetTitle, runVisibleInterval } from "@termix-ssh/plugin-sdk/ui";
 
 function getMonthData(year: number, month: number, startOnMonday: boolean) {
   const firstDay = new Date(year, month, 1).getDay();

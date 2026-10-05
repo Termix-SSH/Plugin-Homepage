@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getWidgetType } from "../widgets/WidgetRegistry";
-import { useTranslation } from "@termix/plugin-sdk/frontend";
-import { Button, Input, InlineView } from "@termix/plugin-sdk/ui";
+import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
+import { Button, Input, InlineView } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   CanvasWidget,

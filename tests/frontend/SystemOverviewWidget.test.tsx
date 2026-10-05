@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, cleanup, waitFor } from "@testing-library/react";
 
-vi.mock("@termix/plugin-sdk/frontend", async (importOriginal) => ({
+vi.mock("@termix-ssh/plugin-sdk/frontend", async (importOriginal) => ({
   ...(await importOriginal<Record<string, unknown>>()),
   useTranslation: () => ({ t: (key: string) => key, language: "en" }),
 }));
@@ -10,7 +10,7 @@ const getVersionInfo = vi.fn();
 const getDatabaseHealth = vi.fn(async () => ({ status: "ok" }));
 const getUptime = vi.fn(async () => ({ formatted: "1d 2h" }));
 
-vi.mock("@termix/plugin-sdk/ui", async (importOriginal) => ({
+vi.mock("@termix-ssh/plugin-sdk/ui", async (importOriginal) => ({
   ...(await importOriginal<Record<string, unknown>>()),
   getVersionInfo: (...args: unknown[]) => getVersionInfo(...args),
   getDatabaseHealth: () => getDatabaseHealth(),

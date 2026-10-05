@@ -4,8 +4,8 @@ import {
   usePluginApi,
   useTranslation,
   type DashboardCardProps,
-} from "@termix/plugin-sdk/frontend";
-import { Button, Card, useConfirm } from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Button, Card, useConfirm } from "@termix-ssh/plugin-sdk/ui";
 import type { ServiceLinkRecord } from "./types.js";
 import { isValidServiceLinkUrl, normalizeServiceLinkUrl } from "./url.js";
 

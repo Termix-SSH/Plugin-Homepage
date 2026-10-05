@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pencil, Trash2, GripVertical } from "lucide-react";
 import type { CanvasWidget } from "../types.js";
 import { getWidgetType, useWidgetTypes } from "./WidgetRegistry";
-import { PluginViewPlaceholder } from "@termix/plugin-sdk/ui";
+import { PluginViewPlaceholder } from "@termix-ssh/plugin-sdk/ui";
 
 interface WidgetShellProps {
   widget: CanvasWidget;

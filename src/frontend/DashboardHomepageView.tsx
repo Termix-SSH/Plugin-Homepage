@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Check, ExternalLink, Link } from "lucide-react";
-import { useTranslation, type ShellApi } from "@termix/plugin-sdk/frontend";
+import { useTranslation, type ShellApi } from "@termix-ssh/plugin-sdk/frontend";
 import { HomepageCanvas } from "./HomepageCanvas.js";
 
 /** The homepage plugin's contribution to the dashboard's "dashboard.secondaryView" slot. */

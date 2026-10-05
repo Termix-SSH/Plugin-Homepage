@@ -4,9 +4,9 @@ import {
   useTranslation,
   useHost,
   type TabHandle as TerminalHandle,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 
-import { PluginComponent, WidgetTitle } from "@termix/plugin-sdk/ui";
+import { PluginComponent, WidgetTitle } from "@termix-ssh/plugin-sdk/ui";
 import { registerWidget } from "./WidgetRegistry";
 import type { SshTerminalConfig, WidgetComponentProps } from "../types.js";
 import { GRID_SIZE } from "../types.js";

@@ -4,7 +4,7 @@ import type {
   StandaloneViewProps,
   TabProps,
   TermixApp,
-} from "@termix/plugin-sdk/frontend";
+} from "@termix-ssh/plugin-sdk/frontend";
 import { HomepageCanvas } from "./HomepageCanvas.js";
 import { HomepagePreviewCard } from "./HomepagePreviewCard.js";
 import { ServiceLinksCard } from "./ServiceLinksCard.js";

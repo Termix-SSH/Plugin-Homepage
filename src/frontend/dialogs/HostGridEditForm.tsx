@@ -1,4 +1,4 @@
-import { useHosts, useTranslation } from "@termix/plugin-sdk/frontend";
+import { useHosts, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { HostGridConfig, WidgetEditFormProps } from "../types.js";
 
 export function HostGridEditForm({

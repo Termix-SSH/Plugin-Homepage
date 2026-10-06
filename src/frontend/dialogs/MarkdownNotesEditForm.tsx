@@ -1,5 +1,5 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Input, Textarea } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Textarea, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 
 import type { MarkdownNotesConfig, WidgetEditFormProps } from "../types.js";
 
@@ -21,13 +21,11 @@ export function MarkdownNotesEditForm({
         />
       </div>
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.renderMarkdown}
-          onChange={(e) =>
-            onChange({ ...config, renderMarkdown: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, renderMarkdown: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.renderMarkdown")}
       </label>

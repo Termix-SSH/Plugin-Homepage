@@ -1,6 +1,6 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Trash2, Plus } from "lucide-react";
-import { Input, Button } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Button, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   PingStatusConfig,
@@ -81,13 +81,11 @@ export function PingStatusEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={showLatency}
-          onChange={(e) =>
-            onChange({ ...config, showLatency: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showLatency: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.showLatency")}
       </label>

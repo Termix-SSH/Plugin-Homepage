@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getWidgetType } from "../widgets/WidgetRegistry";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, Input, InlineView } from "@termix-ssh/plugin-sdk/ui";
+import { Input, InlineView, FormFooter } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   CanvasWidget,
@@ -311,14 +311,13 @@ export function WidgetEditDialog({
       }}
       title={t("homepage.editWidget")}
       footer={
-        <div className="ml-auto flex flex-wrap items-center justify-end gap-2">
-          <Button variant="outline" size="sm" onClick={onClose}>
-            {t("homepage.cancel")}
-          </Button>
-          <Button size="sm" onClick={handleSave} disabled={configInvalid}>
-            {t("homepage.save")}
-          </Button>
-        </div>
+        <FormFooter
+          onCancel={onClose}
+          cancelLabel={t("homepage.cancel")}
+          onSave={() => void handleSave()}
+          saveLabel={t("homepage.save")}
+          disabled={configInvalid}
+        />
       }
     >
       <div className="flex flex-col gap-4">

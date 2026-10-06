@@ -1,3 +1,4 @@
+import { Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { SshTerminalConfig, WidgetEditFormProps } from "../types.js";
 import { SingleHostEditForm } from "./SingleHostEditForm";
@@ -15,13 +16,11 @@ export function SshTerminalEditForm({
         filter={(h) => !!h.enableSsh}
       />
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.autoConnect}
-          onChange={(e) =>
-            onChange({ ...config, autoConnect: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, autoConnect: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.sshTerminalAutoConnect")}
       </label>

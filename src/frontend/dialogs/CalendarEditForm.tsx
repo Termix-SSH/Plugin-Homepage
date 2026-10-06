@@ -1,5 +1,5 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Input } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import type { CalendarConfig, WidgetEditFormProps } from "../types.js";
 
 export function CalendarEditForm({
@@ -23,13 +23,11 @@ export function CalendarEditForm({
         />
       </div>
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.startOnMonday}
-          onChange={(e) =>
-            onChange({ ...config, startOnMonday: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, startOnMonday: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.startOnMonday")}
       </label>

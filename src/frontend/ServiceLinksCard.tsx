@@ -5,7 +5,7 @@ import {
   useTranslation,
   type DashboardCardProps,
 } from "@termix-ssh/plugin-sdk/frontend";
-import { Button, Card, useConfirm } from "@termix-ssh/plugin-sdk/ui";
+import { Button, useConfirm } from "@termix-ssh/plugin-sdk/ui";
 import type { ServiceLinkRecord } from "./types.js";
 import { isValidServiceLinkUrl, normalizeServiceLinkUrl } from "./url.js";
 
@@ -68,10 +68,10 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden w-full h-full py-0 gap-0">
-      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border shrink-0">
-        <Link className="size-3.5 text-muted-foreground" />
-        <span className="text-xs text-muted-foreground uppercase tracking-widest font-semibold">
+    <div className="flex h-full w-full flex-col overflow-hidden bg-background">
+      <div className="flex shrink-0 items-center gap-2 border-b border-border px-3 py-1.5">
+        <Link className="size-3 shrink-0 text-muted-foreground" />
+        <span className="truncate text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
           {t("dashboardTab.serviceLinksTitle")}
         </span>
       </div>
@@ -84,7 +84,7 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
         {links.map((link) => (
           <div
             key={link.id}
-            className="flex items-center justify-between px-4 py-2 border-b border-border last:border-0 group/link"
+            className="flex items-center justify-between px-3 py-1.5 border-b border-border/60 last:border-0 hover:bg-muted/50 group/link"
           >
             <a
               href={link.url}
@@ -109,7 +109,7 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
           </div>
         ))}
       </div>
-      <div className="flex items-center gap-2 px-4 py-2 border-t border-border shrink-0">
+      <div className="flex items-center gap-2 px-3 py-2 border-t border-border shrink-0">
         <input
           type="text"
           value={label}
@@ -147,6 +147,6 @@ export function ServiceLinksCard({ isVisible }: DashboardCardProps) {
           {addError}
         </div>
       )}
-    </Card>
+    </div>
   );
 }

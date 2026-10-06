@@ -4,7 +4,7 @@ import type {
   HostStatusConfig,
   WidgetEditFormProps,
 } from "../types.js";
-import { Select2 } from "@termix-ssh/plugin-sdk/ui";
+import { Select2, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 
 const METRIC_OPTIONS: { key: HostMetricKey; labelKey: string }[] = [
   { key: "cpu", labelKey: "homepage.metricCpu" },
@@ -69,11 +69,9 @@ export function HostStatusEditForm({
               key={key}
               className="flex items-center gap-2 cursor-pointer select-none"
             >
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={shownMetrics.includes(key)}
-                onChange={() => toggleMetric(key)}
-                className="w-3.5 h-3.5 accent-primary"
+                onCheckedChange={() => toggleMetric(key)}
               />
               <span className="text-xs text-foreground">{t(labelKey)}</span>
             </label>

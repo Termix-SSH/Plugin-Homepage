@@ -1,3 +1,4 @@
+import { Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import { useHosts, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { HostGridConfig, WidgetEditFormProps } from "../types.js";
 
@@ -34,11 +35,9 @@ export function HostGridEditForm({
                 key={h.id}
                 className="flex items-center gap-2 text-[10px] cursor-pointer px-1 py-0.5 hover:bg-muted/40"
               >
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={config.hostIds.includes(id)}
-                  onChange={() => toggleHost(id)}
-                  className="accent-accent-brand"
+                  onCheckedChange={() => toggleHost(id)}
                 />
                 {h.name}
               </label>
@@ -69,11 +68,11 @@ export function HostGridEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showIp}
-          onChange={(e) => onChange({ ...config, showIp: e.target.checked })}
-          className="accent-accent-brand"
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showIp: checked === true })
+          }
         />
         {t("homepage.showIp")}
       </label>

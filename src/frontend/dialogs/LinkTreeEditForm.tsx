@@ -1,6 +1,6 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Trash2, Plus } from "lucide-react";
-import { Input, Button } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Button, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   LinkTreeConfig,
@@ -121,11 +121,11 @@ export function LinkTreeEditForm({
         </Button>
       </div>
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={compact}
-          onChange={(e) => onChange({ ...config, compact: e.target.checked })}
-          className="accent-accent-brand"
+          onCheckedChange={(checked) =>
+            onChange({ ...config, compact: checked === true })
+          }
         />
         {t("homepage.compactMode")}
       </label>

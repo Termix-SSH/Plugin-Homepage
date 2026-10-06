@@ -1,3 +1,4 @@
+import { Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import type { TermixUptimeConfig, WidgetEditFormProps } from "../types.js";
 
@@ -9,13 +10,11 @@ export function TermixUptimeEditForm({
   return (
     <div className="flex flex-col gap-2">
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showDetailed}
-          onChange={(e) =>
-            onChange({ ...config, showDetailed: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showDetailed: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.showSeconds")}
       </label>

@@ -22,7 +22,7 @@ export function DashboardHomepageView({
 
   return (
     <>
-      <div className="flex items-center justify-between px-3 py-1.5 border-b border-border shrink-0 bg-muted/20">
+      <div className="flex items-center justify-between px-3 py-1.5 border-b border-border shrink-0">
         <span className="text-[10px] text-muted-foreground/50 uppercase tracking-widest font-semibold">
           {t("nav.homepage")}
         </span>

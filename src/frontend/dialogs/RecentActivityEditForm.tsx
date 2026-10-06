@@ -1,5 +1,8 @@
-import { useActivityTypes, useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Input } from "@termix-ssh/plugin-sdk/ui";
+import {
+  useActivityTypes,
+  useTranslation,
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Input, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import type {
   RecentActivityConfig,
   ActivityType,
@@ -68,13 +71,11 @@ export function RecentActivityEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showTimestamp}
-          onChange={(e) =>
-            onChange({ ...config, showTimestamp: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showTimestamp: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.showTimestamp")}
       </label>

@@ -1,5 +1,5 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Input } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import type { CountdownConfig, WidgetEditFormProps } from "../types.js";
 
 export function CountdownEditForm({
@@ -32,20 +32,20 @@ export function CountdownEditForm({
         />
       </div>
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showDays}
-          onChange={(e) => onChange({ ...config, showDays: e.target.checked })}
-          className="accent-accent-brand"
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showDays: checked === true })
+          }
         />
         {t("homepage.countdownShowDays")}
       </label>
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showHours}
-          onChange={(e) => onChange({ ...config, showHours: e.target.checked })}
-          className="accent-accent-brand"
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showHours: checked === true })
+          }
         />
         {t("homepage.countdownShowHours")}
       </label>

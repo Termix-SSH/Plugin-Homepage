@@ -109,7 +109,7 @@ export function AddWidgetMenu({ state, onAdd, onClose }: AddWidgetMenuProps) {
             onClick={() => setSelectedCat(cat)}
             className={`px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider transition-colors ${
               selectedCat === cat
-                ? "bg-accent-brand text-white"
+                ? "bg-accent-brand/10 text-accent-brand"
                 : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
             }`}
           >

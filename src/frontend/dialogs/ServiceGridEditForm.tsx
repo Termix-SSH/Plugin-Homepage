@@ -1,6 +1,6 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
 import { Trash2, Plus } from "lucide-react";
-import { Input, Button } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Button, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 
 import type {
   ServiceGridConfig,
@@ -99,13 +99,11 @@ export function ServiceGridEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={showLabels}
-          onChange={(e) =>
-            onChange({ ...config, showLabels: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showLabels: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.showLabels")}
       </label>

@@ -1,5 +1,5 @@
 import { useTranslation } from "@termix-ssh/plugin-sdk/frontend";
-import { Input } from "@termix-ssh/plugin-sdk/ui";
+import { Input, Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import type { DashboardLinksConfig, WidgetEditFormProps } from "../types.js";
 
 export function DashboardLinksEditForm({
@@ -48,11 +48,11 @@ export function DashboardLinksEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showIcons}
-          onChange={(e) => onChange({ ...config, showIcons: e.target.checked })}
-          className="accent-accent-brand"
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showIcons: checked === true })
+          }
         />
         {t("homepage.showImage")}
       </label>

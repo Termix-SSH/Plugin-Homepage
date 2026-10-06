@@ -92,7 +92,7 @@ function SshTerminalWidget({
           </span>
         </div>
         <button
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-accent-brand text-white text-xs font-medium hover:opacity-90 transition-opacity"
+          className="flex h-8 items-center gap-1.5 border border-accent-brand/40 px-3 text-xs font-medium text-accent-brand transition-colors hover:bg-accent-brand/10"
           onClick={() => setStarted(true)}
         >
           <Play size={11} />

@@ -3,16 +3,15 @@ import {
   useTranslation,
   type DashboardCardProps,
 } from "@termix-ssh/plugin-sdk/frontend";
-import { Card } from "@termix-ssh/plugin-sdk/ui";
 import { HomepageCanvas } from "./HomepageCanvas.js";
 
 export function HomepagePreviewCard({ shell }: DashboardCardProps) {
   const { t } = useTranslation();
   return (
-    <Card className="relative overflow-hidden w-full h-full flex flex-col p-0 gap-0">
-      <div className="flex items-center gap-2 px-3 py-2 shrink-0 border-b border-border">
-        <LayoutGrid className="size-3.5 text-muted-foreground" />
-        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-widest">
+    <div className="relative flex h-full w-full flex-col overflow-hidden bg-background">
+      <div className="flex shrink-0 items-center gap-2 border-b border-border px-3 py-1.5">
+        <LayoutGrid className="size-3 shrink-0 text-muted-foreground" />
+        <span className="truncate text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
           {t("homepage.previewTitle")}
         </span>
         <button
@@ -26,6 +25,6 @@ export function HomepagePreviewCard({ shell }: DashboardCardProps) {
       <div className="flex-1 relative overflow-hidden">
         <HomepageCanvas isReadOnly={true} fitOnLoad={true} />
       </div>
-    </Card>
+    </div>
   );
 }

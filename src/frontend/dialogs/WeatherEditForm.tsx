@@ -31,9 +31,9 @@ export function WeatherEditForm({
               key={u}
               type="button"
               onClick={() => onChange({ ...config, unit: u })}
-              className={`flex-1 h-8 text-sm transition-colors ${
+              className={`flex-1 h-8 text-xs transition-colors ${
                 config.unit === u
-                  ? "bg-accent-brand text-white"
+                  ? "bg-accent-brand/10 text-accent-brand"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
               }`}
             >

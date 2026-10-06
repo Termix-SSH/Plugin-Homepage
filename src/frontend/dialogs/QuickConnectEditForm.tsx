@@ -1,3 +1,4 @@
+import { Checkbox } from "@termix-ssh/plugin-sdk/ui";
 import {
   useHostActions,
   useHosts,
@@ -52,11 +53,9 @@ export function QuickConnectEditForm({
                 key={h.id}
                 className="flex items-center gap-2 text-xs cursor-pointer"
               >
-                <input
-                  type="checkbox"
+                <Checkbox
                   checked={config.hostIds.includes(id)}
-                  onChange={() => toggleHost(id)}
-                  className="accent-accent-brand"
+                  onCheckedChange={() => toggleHost(id)}
                 />
                 <span className="truncate">{h.name || h.ip}</span>
               </label>
@@ -78,11 +77,9 @@ export function QuickConnectEditForm({
               key={type}
               className="flex items-center gap-2 text-xs cursor-pointer"
             >
-              <input
-                type="checkbox"
+              <Checkbox
                 checked={config.connectionTypes.includes(type)}
-                onChange={() => toggleType(type)}
-                className="accent-accent-brand"
+                onCheckedChange={() => toggleType(type)}
               />
               {t(labelKey, type)}
             </label>
@@ -117,13 +114,11 @@ export function QuickConnectEditForm({
       </div>
 
       <label className="flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
-        <input
-          type="checkbox"
+        <Checkbox
           checked={config.showStatus}
-          onChange={(e) =>
-            onChange({ ...config, showStatus: e.target.checked })
+          onCheckedChange={(checked) =>
+            onChange({ ...config, showStatus: checked === true })
           }
-          className="accent-accent-brand"
         />
         {t("homepage.showStatus")}
       </label>

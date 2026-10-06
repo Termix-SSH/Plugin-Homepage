@@ -125,5 +125,3 @@ registerWidget<SearchLinksConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 3 },
   component: SearchLinksWidget,
 });
-
-export { SearchLinksWidget };

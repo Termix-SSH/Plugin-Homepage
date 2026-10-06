@@ -128,5 +128,3 @@ registerWidget<PingStatusConfig>({
   minSize: { w: GRID_SIZE * 3, h: GRID_SIZE * 2 },
   component: PingStatusWidget,
 });
-
-export { PingStatusWidget };

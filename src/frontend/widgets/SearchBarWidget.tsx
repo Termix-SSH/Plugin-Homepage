@@ -99,5 +99,3 @@ registerWidget<SearchBarConfig>({
   minSize: { w: GRID_SIZE * 6, h: GRID_SIZE * 2 },
   component: SearchBarWidget,
 });
-
-export { SearchBarWidget };

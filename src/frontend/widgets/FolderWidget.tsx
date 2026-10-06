@@ -42,5 +42,3 @@ registerWidget<FolderConfig>({
     WidgetComponentProps<FolderConfig>
   >,
 });
-
-export { FolderWidget };

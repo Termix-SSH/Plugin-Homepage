@@ -150,5 +150,3 @@ registerWidget<RssFeedConfig>({
   minSize: { w: GRID_SIZE * 2, h: GRID_SIZE * 2 },
   component: RssFeedWidget,
 });
-
-export { RssFeedWidget };

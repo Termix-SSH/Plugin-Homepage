@@ -139,5 +139,3 @@ registerWidget<TermixUptimeConfig>({
   minSize: { w: GRID_SIZE * 3, h: GRID_SIZE * 2 },
   component: TermixUptimeWidget,
 });
-
-export { TermixUptimeWidget };

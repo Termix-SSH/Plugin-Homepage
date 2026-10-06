@@ -51,5 +51,3 @@ registerWidget<IframeConfig>({
   minSize: { w: GRID_SIZE * 2, h: GRID_SIZE * 2 },
   component: IframeWidget,
 });
-
-export { IframeWidget };

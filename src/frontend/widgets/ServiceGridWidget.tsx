@@ -158,5 +158,3 @@ registerWidget<ServiceGridConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 4 },
   component: ServiceGridWidget,
 });
-
-export { ServiceGridWidget };

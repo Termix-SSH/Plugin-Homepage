@@ -55,5 +55,3 @@ registerWidget<TextBannerConfig>({
   minSize: { w: GRID_SIZE * 3, h: GRID_SIZE * 2 },
   component: TextBannerWidget,
 });
-
-export { TextBannerWidget };

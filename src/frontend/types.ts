@@ -47,7 +47,7 @@ export interface HomepageItemRow {
   updatedAt: string;
 }
 
-export interface HomepageLayoutEntry {
+interface HomepageLayoutEntry {
   itemId: number;
   x: number;
   y: number;
@@ -157,11 +157,10 @@ export interface RssFeedConfig {
 
 // ---- New widget configs ----
 
-export type MetricsChartMetric =
-  "cpu" | "memory" | "disk" | "net_rx" | "net_tx";
-export type MetricsChartRange = "15m" | "1h" | "6h" | "24h";
+type MetricsChartMetric = "cpu" | "memory" | "disk" | "net_rx" | "net_tx";
+type MetricsChartRange = "15m" | "1h" | "6h" | "24h";
 
-export interface MetricsChartConfig {
+interface MetricsChartConfig {
   hostId: number;
   metric: MetricsChartMetric;
   range: MetricsChartRange;
@@ -194,12 +193,12 @@ export interface RecentActivityConfig {
   showTimestamp: boolean;
 }
 
-export interface DockerActivityConfig {
+interface DockerActivityConfig {
   maxItems: number;
   showHostName: boolean;
 }
 
-export interface SshQuickConnectConfig {
+interface SshQuickConnectConfig {
   hostIds: number[];
   connectionType: QuickConnectType;
   showStatus: boolean;
@@ -216,7 +215,7 @@ export interface SystemOverviewConfig {
   showUptime: boolean;
 }
 
-export interface FileManagerWidgetConfig {
+interface FileManagerWidgetConfig {
   hostId: number;
 }
 
@@ -385,7 +384,7 @@ export interface ResizeState {
   startH: number;
 }
 
-export interface ContextMenuAnchor {
+interface ContextMenuAnchor {
   top: number;
   bottom: number;
   left: number;

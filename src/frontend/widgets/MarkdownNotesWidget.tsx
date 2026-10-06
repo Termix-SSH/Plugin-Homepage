@@ -120,5 +120,3 @@ registerWidget<MarkdownNotesConfig>({
   minSize: { w: GRID_SIZE * 3, h: GRID_SIZE * 3 },
   component: MarkdownNotesWidget,
 });
-
-export { MarkdownNotesWidget };

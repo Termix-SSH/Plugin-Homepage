@@ -115,5 +115,3 @@ registerWidget<HostStatusConfig>({
   minSize: { w: GRID_SIZE * 2, h: GRID_SIZE * 2 },
   component: HostStatusWidget,
 });
-
-export { HostStatusWidget };

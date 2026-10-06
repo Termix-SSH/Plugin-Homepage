@@ -157,5 +157,3 @@ registerWidget<CalendarConfig>({
   minSize: { w: GRID_SIZE * 7, h: GRID_SIZE * 7 },
   component: CalendarWidget,
 });
-
-export { CalendarWidget };

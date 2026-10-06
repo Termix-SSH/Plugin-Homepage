@@ -196,5 +196,3 @@ registerWidget<CustomApiConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 3 },
   component: CustomApiWidget,
 });
-
-export { CustomApiWidget };

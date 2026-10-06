@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Activity } from "lucide-react";
-import { useTranslation, activityTarget } from "@termix-ssh/plugin-sdk/frontend";
+import {
+  useTranslation,
+  activityTarget,
+} from "@termix-ssh/plugin-sdk/frontend";
 
 import {
   WidgetTitle,
@@ -122,5 +125,3 @@ registerWidget<RecentActivityConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 3 },
   component: RecentActivityWidget,
 });
-
-export { RecentActivityWidget };

@@ -123,5 +123,3 @@ registerWidget<LinkTreeConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 4 },
   component: LinkTreeWidget,
 });
-
-export { LinkTreeWidget };

@@ -119,5 +119,3 @@ registerWidget<HostGridConfig>({
   minSize: { w: GRID_SIZE * 4, h: GRID_SIZE * 3 },
   component: HostGridWidget,
 });
-
-export { HostGridWidget };

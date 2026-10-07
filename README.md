@@ -26,14 +26,6 @@ Homepage is a drag and drop page of widgets for your servers, services and anyth
 
 <br />
 
-## Services
-
-Provides to other plugins:
-
-- `homepage.items`: list a user's homepage widgets
-
-<br />
-
 ## Sponsors
 
 Interested in a paid placement to support development? Email [mail@termix.site](mailto:mail@termix.site).

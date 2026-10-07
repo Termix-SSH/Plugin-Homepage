@@ -20,3 +20,9 @@ npm run format     # format the code with Prettier
 ## Permissions
 
 - `homepage.use`: view and edit the homepage and dashboard service links. Admins and users have it by default.
+
+## Services
+
+Provides to other plugins:
+
+- `homepage.items`: list a user's homepage widgets

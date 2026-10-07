@@ -16,12 +16,6 @@ Homepage is a drag and drop page of widgets for your servers, services and anyth
 
 <br />
 
-## Install
-
-Homepage ships with [Termix](https://github.com/Termix-SSH/Termix). Admins can turn it on or off, update it or install it again from the Plugins tab. Want to see it first? Try the [demo](https://demo.termix.site/), any username and password works.
-
-<br />
-
 ## Features
 
 - Drag, resize and arrange widgets on a canvas

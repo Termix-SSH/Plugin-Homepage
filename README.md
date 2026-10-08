@@ -14,6 +14,8 @@
 
 Homepage is a drag and drop page of widgets for your servers, services and anything else you want to keep an eye on.
 
+Read the [docs](https://docs.termix.site/plugins/homepage) to set it up and use it.
+
 <br />
 
 ## Features

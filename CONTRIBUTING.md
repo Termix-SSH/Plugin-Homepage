@@ -10,19 +10,6 @@ npm run validate   # check manifest.json
 npm run format     # format the code with Prettier
 ```
 
-## Settings
+## Docs
 
-### Admin
-
-- **Allowed private hosts:** private or loopback addresses the Ping Status and Custom API widgets may reach. Empty blocks every private address
-- **Private certificate authority (PEM):** an optional CA bundle trusted for those hosts
-
-## Permissions
-
-- `homepage.use`: view and edit the homepage and dashboard service links. Admins and users have it by default.
-
-## Services
-
-Provides to other plugins:
-
-- `homepage.items`: list a user's homepage widgets
+The docs for this plugin are in [docs/](docs/) and are published at https://docs.termix.site/plugins/homepage. Settings, permissions, services, environment variables and the API reference are made from `manifest.json` and the `@openapi` comments in the code, so keep those up to date instead of writing them by hand. See [writing docs](https://docs.termix.site/develop/docs).

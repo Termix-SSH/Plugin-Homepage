@@ -1,5 +1,8 @@
+import fs from "node:fs";
+import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { createTestDb, type TestDb } from "@termix-ssh/plugin-sdk/testing";
+import { findUnownedTableWrites } from "@termix-ssh/plugin-sdk/ddl";
 import { pluginDir } from "./helpers";
 
 // The three tables as core's SQLite bootstrap created them before 2.9.0,
@@ -82,7 +85,10 @@ describe("adopting the homepage tables", () => {
       },
     });
 
-    expect(db.applied).toEqual(["0001_adopt_homepage_tables"]);
+    expect(db.applied).toEqual([
+      "0001_adopt_homepage_tables",
+      "0002_mysql_long_text",
+    ]);
     expect(tableExists("homepage_items")).toBe(false);
     expect(tableExists("homepage_layouts")).toBe(false);
     expect(tableExists("dashboard_service_links")).toBe(false);
@@ -172,5 +178,21 @@ describe("adopting the homepage tables", () => {
         .all() as { user_id: string }[]
     ).map((row) => row.user_id);
     expect(remaining).toEqual(["user-2"]);
+  });
+});
+
+describe("mysql migrations", () => {
+  it("widen widget config and layouts past the 64KB TEXT cap", () => {
+    const sql = fs.readFileSync(
+      path.join(pluginDir, "migrations", "mysql", "0002_mysql_long_text.sql"),
+      "utf8",
+    );
+    expect(sql).toContain(
+      "ALTER TABLE `p_homepage_homepage_items` MODIFY COLUMN `config` longtext NOT NULL DEFAULT ('{}');",
+    );
+    expect(sql).toContain(
+      "ALTER TABLE `p_homepage_homepage_layouts` MODIFY COLUMN `layout` longtext NOT NULL DEFAULT ('{}');",
+    );
+    expect(findUnownedTableWrites("homepage", sql)).toEqual([]);
   });
 });

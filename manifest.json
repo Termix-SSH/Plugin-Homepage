@@ -22,12 +22,7 @@
     "termix": ">=26.10.0",
     "api": "^1.2"
   },
-  "capabilities": [
-    "db:own",
-    "network:serve",
-    "network:outbound",
-    "ui:surface"
-  ],
+  "capabilities": ["db:own", "network:serve", "network:outbound", "ui:surface"],
   "provides": [
     {
       "service": "homepage.items",
@@ -36,20 +31,14 @@
     }
   ],
   "locales": "locales",
-  "platforms": [
-    "linux",
-    "win32",
-    "darwin"
-  ],
+  "platforms": ["linux", "win32", "darwin"],
   "contributes": {
     "tabs": [
       {
         "id": "homepage",
         "titleKey": "nav.homepage",
         "icon": "LayoutGrid",
-        "openFrom": [
-          "palette"
-        ]
+        "openFrom": ["palette"]
       }
     ],
     "dashboardCards": [
@@ -67,18 +56,13 @@
         "name": "use",
         "titleKey": "permissions.use.title",
         "descriptionKey": "permissions.use.description",
-        "defaultRoles": [
-          "admin",
-          "user"
-        ]
+        "defaultRoles": ["admin", "user"]
       }
     ],
     "actionSlots": [
       {
         "id": "dashboard.secondaryView",
-        "accepts": [
-          "component"
-        ]
+        "accepts": ["component"]
       }
     ],
     "syncEntities": [

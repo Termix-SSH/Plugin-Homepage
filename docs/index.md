@@ -7,7 +7,7 @@ Switch the dashboard's header to Homepage, or open it from the command palette. 
 ## Edit it
 
 1. Press Unlock Layout.
-2. **Add Widget** and pick one. Drag it where you want and drag its corner to resize.
+2. Add Widget and pick one. Drag it where you want and drag its corner to resize.
 3. Click a widget's settings to configure it.
 4. Press Lock Layout when you are done, so nothing moves by accident.
 

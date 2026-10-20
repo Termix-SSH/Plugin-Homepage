@@ -47,7 +47,9 @@
       "indexes": [
         {
           "name": "idx_homepage_items_user_id",
-          "columns": ["userId"]
+          "columns": [
+            "userId"
+          ]
         }
       ],
       "adopts": "homepage_items"
@@ -123,10 +125,52 @@
       "indexes": [
         {
           "name": "idx_dashboard_service_links_user_id",
-          "columns": ["userId"]
+          "columns": [
+            "userId"
+          ]
         }
       ],
       "adopts": "dashboard_service_links"
+    },
+    "recent_activity": {
+      "columns": {
+        "id": {
+          "type": "id",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "userId": {
+          "type": "refUser",
+          "length": 255,
+          "notNull": true
+        },
+        "type": {
+          "type": "text",
+          "notNull": true
+        },
+        "hostId": {
+          "type": "refHost",
+          "notNull": true
+        },
+        "hostName": {
+          "type": "text"
+        },
+        "timestamp": {
+          "type": "timestamp",
+          "notNull": true,
+          "defaultNow": true
+        }
+      },
+      "indexes": [
+        {
+          "name": "idx_recent_activity_user_ts",
+          "columns": [
+            "userId",
+            "timestamp"
+          ]
+        }
+      ],
+      "adopts": "recent_activity"
     }
   }
 }

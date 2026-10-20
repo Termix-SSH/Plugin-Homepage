@@ -28,6 +28,16 @@ const LEGACY_DDL = `
     updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
   );
 
+  CREATE TABLE recent_activity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    host_id INTEGER NOT NULL REFERENCES ssh_data(id) ON DELETE CASCADE,
+    host_name TEXT,
+    timestamp TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+  CREATE INDEX idx_recent_activity_user_ts ON recent_activity (user_id, timestamp);
+
   CREATE TABLE dashboard_service_links (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -82,12 +92,19 @@ describe("adopting the homepage tables", () => {
             "INSERT INTO dashboard_service_links (user_id, label, url, sync_id) VALUES (?, ?, ?, ?)",
           )
           .run("user-1", "Grafana", "https://grafana.local", "sync-link");
+        sqlite.exec("INSERT INTO ssh_data (id) VALUES (7)");
+        sqlite
+          .prepare(
+            "INSERT INTO recent_activity (user_id, type, host_id, host_name) VALUES (?, ?, ?, ?)",
+          )
+          .run("user-1", "terminal", 7, "web-1");
       },
     });
 
     expect(db.applied).toEqual([
       "0001_adopt_homepage_tables",
       "0002_mysql_long_text",
+      "0003_adopt_recent_activity",
     ]);
     expect(tableExists("homepage_items")).toBe(false);
     expect(tableExists("homepage_layouts")).toBe(false);
@@ -95,6 +112,19 @@ describe("adopting the homepage tables", () => {
     expect(tableExists("p_homepage_homepage_items")).toBe(true);
     expect(tableExists("p_homepage_homepage_layouts")).toBe(true);
     expect(tableExists("p_homepage_dashboard_service_links")).toBe(true);
+    expect(tableExists("recent_activity")).toBe(false);
+    expect(
+      db.sqlite
+        .prepare(
+          "SELECT user_id, type, host_id, host_name FROM p_homepage_recent_activity",
+        )
+        .all(),
+    ).toEqual([
+      { user_id: "user-1", type: "terminal", host_id: 7, host_name: "web-1" },
+    ]);
+    expect(indexOn("p_homepage_recent_activity")).toEqual([
+      "idx_recent_activity_user_ts",
+    ]);
 
     const items = db.sqlite
       .prepare(

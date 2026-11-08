@@ -19,11 +19,6 @@ const widget: CanvasWidget = {
   typeId: "clock",
   title: "Clock",
   config: {},
-  x: 0,
-  y: 0,
-  w: 8,
-  h: 5,
-  zOrder: 0,
 };
 
 function renderClock(config: Partial<ClockConfig> = {}) {

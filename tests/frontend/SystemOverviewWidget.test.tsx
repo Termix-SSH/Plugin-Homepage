@@ -28,11 +28,6 @@ const widget: CanvasWidget = {
   typeId: "system_overview",
   title: "Termix",
   config: {},
-  x: 0,
-  y: 0,
-  w: 10,
-  h: 6,
-  zOrder: 0,
 };
 
 function renderWidget() {

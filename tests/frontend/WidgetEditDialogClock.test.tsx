@@ -15,11 +15,6 @@ function clockWidget(timezone?: string): CanvasWidget {
     typeId: "clock",
     title: "Clock",
     config: { timezone, showSeconds: true, format: "24h" },
-    x: 0,
-    y: 0,
-    w: 8,
-    h: 5,
-    zOrder: 0,
   };
 }
 

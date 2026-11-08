@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.2.0
+
+### Changed
+
+- The homepage is now a tile grid like the dashboard, with no zoom or pan. Open Customize to move, resize, add and remove widgets
+- Layouts from the old canvas move over on their own the first time you open the homepage
+- Folders are now headings for a group of widgets
+- Needs Termix 26.11.1 or newer
+- Toolbars, loading screens, back buttons and Save bars match the rest of Termix
+
+### Fixed
+
+- A ping widget site that does not answer shows as down without an error in the browser console
+- RSS feeds on a host in the admin private address list load, like ping and link widgets already did
+
 ## 1.1.0
 
 ### Changed

@@ -26,9 +26,10 @@ Read the [docs](https://docs.termix.site/plugins/homepage) to set it up and use 
 
 ## Features
 
-- Drag, resize and arrange widgets on a canvas
+- A tile grid like the dashboard: move, resize, add and remove widgets
 - Widgets for host status, pings, service links, bookmarks, search, clocks, calendars, weather, RSS, notes, images, iframes, custom APIs and a live terminal
-- Other features add their own widgets, like Docker, Tunnels and Host Metrics
+- Other plugins add their own widgets, like Docker, Tunnels, Uptime and Host Metrics
+- Folders as headings for a group of widgets
 - Service links and a homepage preview on the dashboard
 - Syncs between the desktop app and a Termix server
 

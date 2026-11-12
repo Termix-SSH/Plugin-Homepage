@@ -1,0 +1,119 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/scripts/authz/authz.schema.json",
+  "seed": [
+    {
+      "as": "owner",
+      "method": "POST",
+      "path": "/plugin-api/homepage/items",
+      "body": {
+        "typeId": "authz-own-typeId"
+      },
+      "capture": {
+        "homepage.items": "id"
+      }
+    },
+    {
+      "as": "owner",
+      "method": "POST",
+      "path": "/plugin-api/homepage/service-links",
+      "body": {
+        "label": "authz-own-label",
+        "url": "http://127.0.0.1:9/authz"
+      },
+      "capture": {
+        "homepage.service-links": "id"
+      }
+    }
+  ],
+  "routes": {
+    "GET /plugin-api/homepage/favicon": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "GET /plugin-api/homepage/items": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "POST /plugin-api/homepage/items": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "DELETE /plugin-api/homepage/items/:id": {
+      "access": "user",
+      "permission": "homepage.use",
+      "resource": {
+        "kind": "own",
+        "fixture": "homepage.items"
+      },
+      "params": {
+        "id": "homepage.items"
+      },
+      "destructive": true
+    },
+    "PUT /plugin-api/homepage/items/:id": {
+      "access": "user",
+      "permission": "homepage.use",
+      "resource": {
+        "kind": "own",
+        "fixture": "homepage.items"
+      },
+      "params": {
+        "id": "homepage.items"
+      }
+    },
+    "GET /plugin-api/homepage/layout": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "PUT /plugin-api/homepage/layout": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "GET /plugin-api/homepage/ping": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "GET /plugin-api/homepage/proxy": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "GET /plugin-api/homepage/rss": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "GET /plugin-api/homepage/service-links": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "POST /plugin-api/homepage/service-links": {
+      "access": "user",
+      "permission": "homepage.use"
+    },
+    "DELETE /plugin-api/homepage/service-links/:id": {
+      "access": "user",
+      "permission": "homepage.use",
+      "resource": {
+        "kind": "own",
+        "fixture": "homepage.service-links"
+      },
+      "params": {
+        "id": "homepage.service-links"
+      },
+      "destructive": true
+    },
+    "PUT /plugin-api/homepage/service-links/:id": {
+      "access": "user",
+      "permission": "homepage.use",
+      "resource": {
+        "kind": "own",
+        "fixture": "homepage.service-links"
+      },
+      "params": {
+        "id": "homepage.service-links"
+      },
+      "body": {
+        "label": "authz-x"
+      }
+    }
+  }
+}

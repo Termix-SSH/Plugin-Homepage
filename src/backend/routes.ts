@@ -280,6 +280,8 @@ export function registerHomepageRoutes(
    *             properties:
    *               entries:
    *                 type: array
+   *                 items:
+   *                   type: object
    *               version:
    *                 type: number
    *     responses:

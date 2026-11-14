@@ -5,6 +5,7 @@
 ### Changed
 
 - Runs in its own process on Termix 26.11.2 and later, with no access to the server beyond what Termix allows it
+- The host status widget draws numbers from other plugins as plain values, with no extra frame per widget (needs Termix 26.11.2)
 
 ### Fixed
 

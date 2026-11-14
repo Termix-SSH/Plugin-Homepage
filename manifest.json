@@ -21,7 +21,7 @@
   ],
   "engine": {
     "termix": ">=26.11.2-0",
-    "api": "^2.6.0"
+    "api": "^2.7.0"
   },
   "capabilities": [
     "db:own",
@@ -94,6 +94,7 @@
           "default": ""
         }
       ]
-    }
+    },
+    "uses": ["terminal.view"]
   }
 }

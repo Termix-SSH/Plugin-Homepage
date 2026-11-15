@@ -61,6 +61,18 @@
         "id": "homepage.items"
       }
     },
+    "POST /plugin-api/homepage/items/:id/view": {
+      "access": "user",
+      "permission": "homepage.use",
+      "resource": {
+        "kind": "own",
+        "fixture": "homepage.items"
+      },
+      "params": {
+        "id": "homepage.items"
+      },
+      "note": "Grants only the page saved in the caller own embed widget; the seeded widget is a plain one, so the owner gets 400."
+    },
     "GET /plugin-api/homepage/layout": {
       "access": "user",
       "permission": "homepage.use"

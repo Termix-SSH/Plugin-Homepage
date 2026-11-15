@@ -25,6 +25,7 @@
   },
   "capabilities": [
     "db:own",
+    "desktop:window",
     "hosts:activity-provide",
     "network:serve",
     "network:outbound",

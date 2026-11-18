@@ -39,6 +39,40 @@ describe("homepage item routes", () => {
     expect(res.status).toBe(400);
   });
 
+  it("grants only the page saved in the caller's own embed widget", async () => {
+    const embed = await server.request("POST", "/items", {
+      body: { typeId: "iframe_embed", config: { url: "https://grafana.lan/" } },
+    });
+    const opened = await server.request(
+      "POST",
+      `/items/${embed.body.id}/view`,
+      {
+        body: { url: "https://somewhere.else/" },
+      },
+    );
+    expect(opened.status).toBe(200);
+    expect(opened.body).toEqual({ grant: "grant-1" });
+    // The address comes from the saved widget, never the request.
+    expect(server.mock.viewGrants).toEqual([
+      { url: "https://grafana.lan/", grant: "grant-1" },
+    ]);
+
+    const other = await server.request("POST", `/items/${embed.body.id}/view`, {
+      user: "user-2",
+    });
+    expect(other.status).toBe(404);
+
+    const clock = await server.request("POST", "/items", {
+      body: { typeId: "clock" },
+    });
+    const notEmbed = await server.request(
+      "POST",
+      `/items/${clock.body.id}/view`,
+    );
+    expect(notEmbed.status).toBe(400);
+    expect(server.mock.viewGrants).toHaveLength(1);
+  });
+
   it("404s updating or deleting another user's item", async () => {
     const created = await server.request("POST", "/items", {
       body: { typeId: "clock" },
